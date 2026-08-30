@@ -134,45 +134,92 @@ h1 {
   justify-content: center;
   align-items: center;
   height: 100px;
+  margin-top: -50px;
+  margin-bottom: 0;
 }
 
 #logo {
-  padding-top: 2%;
+  padding-top: 10px;    /* Minimal spacing above text */
+  padding-bottom: 10px; /* Minimal spacing below text */
   font-family: myFirstFont;
   color: white;
   font-size: 80px;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.1;
 }
 
-#yesandvid,
-#yesandpic {
-  max-width: 50%;
-  height: auto;
-}
-
-#yesandvid {
-  border-radius: 17%;
-  position: relative;
-  width: 45%;
-  left: 5%;
-  top: 1%;
-  height: auto; /* Ensure height adjusts automatically */
-  object-fit: contain; /* Prevent cutting of content */
-}
-
-#yesandpic {
-  max-width: 40%;
-  height: auto;
-  width: 50vw;
-  margin-left: 10%;
-  position: relative;
-  bottom: 25px;
+/* Container: Expanded to fit larger media */
+.media-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 50px;
+  max-width: 1350px; /* Expanded from 1150px to prevent wrapping */
+  margin-top: 10px; /* Pulls card up closer to heading */
+  margin: 10px auto;
 }
 
 .vidandpic {
   display: flex;
-  position: relative;
-  left: 15px;
-  bottom: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+}
+
+/* Video: Scaled Larger */
+#yesandvid {
+  width: 100%;
+  max-width: 680px; /* Increased from 580px */
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  object-fit: cover;
+  position: static;
+}
+
+/* Right Column Container */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 520px; /* Increased from 440px */
+}
+
+/* Vinyl / Album Cover: Scaled Larger */
+#yesandpic {
+  width: 100%;
+  max-width: 500px; /* Increased from 420px */
+  height: auto;
+  margin: 0;
+  position: static;
+}
+
+/* Stream Section: Bigger Text & Button */
+.stream {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin-top: -59px; /* Adjusted negative margin for larger album graphic */
+  position: static;
+  color: white;
+}
+
+#streamtxt {
+  font-size: 1.35rem; /* Increased text size */
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.stream button {
+  transform: scale(1.25); /* Scales the button up 25% */
+  margin: 0;
+  position: static;
 }
 
 .vidandpic img,
@@ -181,40 +228,37 @@ h1 {
   height: auto;
 }
 
-.stream {
-  display: flex;
-  color: white;
-  position: relative;
-  left: 59%;
-  top: -110px;
-  text-align: center;
-
-}
-
 @media (max-width: 768px) {
+  .media-card {
+    padding: 20px;
+  }
+
   .vidandpic {
     flex-direction: column;
     align-items: center;
-    top:10px;
+    gap: 20px;
   }
 
-  #yesandvid{
-    left:-9px;
-    height:100%;
-    width:70%;
+  #yesandvid {
+    width: 100%;
+    max-width: 100%;
   }
 
   #yesandvid,
   #yesandpic {
     max-width: 100%;
   }
-}
 
-@media (max-width: 768px) {
+  .right-column {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #yesandpic {
+    max-width: 100%;
+  }
+
   .stream {
-    text-align: center;
-    left: 120px;
-    padding-top:50px;
     width: 100%;
   }
 
@@ -356,6 +400,8 @@ button:hover {
 
 #streamtxt {
   font-family: mySecondFont;
+  font-size: 1.15rem;
+  margin: 0;
 }
 
 .about {
@@ -473,12 +519,12 @@ tr:hover {
 
 .icon-list2{
   list-style-type: none;
-  padding: 0;
+  padding: 10px;
+  padding-bottom: 50px;
   margin: 0;
   position: relative;
   left:600px;
   display: flex;
-  margin-bottom: 20px;
 }
 
 .icon-list2 li {
@@ -501,7 +547,8 @@ tr:hover {
   }
 
   .padding-large{
-    padding:12px 24px!important
+    padding:12px 24px!important;
+    padding-top: 20px !important;
   }
 
   .content,.auto {
@@ -611,22 +658,22 @@ tr:hover {
   background: #ffffff;
 }
 .slide-1 {
-  background: url('img/aa1.png');
+  background: url('vids/theway.mp4');
 }
 .slide-2 {
-  background: url('img/aa2.png');
+  background: url('vids/prob.mp4');
 }
 .slide-3 {
-  background: url('img/aa3.png');
+  background: url('vids/dw.mp4');
 }
 .slide-4 {
-  background: url('img/aa5.png');
+  background: url('vids/sw.mp4');
 }
 .slide-5 {
-  background: url('img/aa4.png');
+  background: url('vids/tun.mp4');
 }
 .slide-6 {
-  background: url('img/aa6.png');
+  background: url('vids/pos.mp4');
 }
 .slide2 {
   width: 100%;
@@ -750,7 +797,7 @@ body, html {
 }
 
 #section3 {
-  background-image: url('https://www.lntvglobal.com/media/256011/亞莉安娜-照片請標註由live-nation-理想國提供-9.jpg');
+  background-image: url('https://ipowerrichmond.com/wp-content/uploads/sites/72/2017/05/14955096001879.jpg?resize=2048%2C1314&strip=all&quality=80');
 }
 
 #section4 {
